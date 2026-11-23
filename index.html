@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼겹살 외식물가 분석</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <header class="header">
+      <div>
+        <p class="eyebrow">EXTERNAL DINING PRICE INDEX</p>
+        <h1>삼겹살 외식물가 분석</h1>
+      </div>
+      <div class="source">
+        <span>DATA SOURCE</span>
+        <strong>삼겹살.xlsx</strong>
+      </div>
+    </header>
+
+    <section class="summary-grid">
+      <article class="summary-card">
+        <span class="label">2026 전국 평균</span>
+        <div><strong id="latestAverage">-</strong><small>원 / 200g 환산</small></div>
+        <p id="latestChange" class="change">-</p>
+      </article>
+      <article class="summary-card accent">
+        <span class="label">가장 비싼 지역</span>
+        <div><strong id="highestRegion">-</strong><small id="highestPrice">-</small></div>
+        <p>2026년 기준</p>
+      </article>
+      <article class="summary-card">
+        <span class="label">가장 저렴한 지역</span>
+        <div><strong id="lowestRegion">-</strong><small id="lowestPrice">-</small></div>
+        <p>2026년 기준</p>
+      </article>
+      <article class="summary-card">
+        <span class="label">10년간 평균 상승률</span>
+        <div><strong id="longTermChange">-</strong><small>2016 → 2026</small></div>
+        <p id="priceGap">지역간 격차: -</p>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel ranking-panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-index">01 / REGIONAL PRICE</p>
+            <h2>지역별 삼겹살 외식가격</h2>
+          </div>
+          <label class="year-select">
+            기준 연도
+            <select id="yearSelect" aria-label="차트 기준 연도"></select>
+          </label>
+        </div>
+        <div class="chart-legend">
+          <span><i class="legend-dot highest"></i> 최고가</span>
+          <span><i class="legend-dot average"></i> 평균 초과</span>
+          <span><i class="legend-dot lowest"></i> 평균 이하</span>
+        </div>
+        <div id="barChart" class="bar-chart" role="img" aria-label="지역별 삼겹살 외식가격 막대그래프"></div>
+      </article>
+
+      <aside class="panel insight-panel">
+        <p class="section-index">02 / INSIGHT</p>
+        <h2>가격 동향 분석</h2>
+
+        <div class="insight-block">
+          <span>지역별 추세 확인</span>
+          <select id="regionSelect" aria-label="지역 선택"></select>
+        </div>
+
+        <div class="trend-price">
+          <strong id="trendLatest">-</strong>
+          <small id="trendChange">-</small>
+        </div>
+        <div id="trendChart" class="trend-chart" aria-label="선택 지역 연도별 가격 추이"></div>
+
+        <div class="key-message">
+          <span>ANALYSIS</span>
+          <p id="analysisMessage">데이터를 분석하고 있습니다.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
